@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** ------------- Color Palette ------------- */
+
+$background-primary: #010C15;
+$background-secondary: #011627;
+$border-primary: #1E2D3D;
+$color-primary: #607B96;
+$color-white: #FFFFFF;
+$font-color-pre: #E5E9F0;
+$font-color-comment: #607B96;
+
+/** ------------- Default Image ------------- */
+
+$image_logo: url('../../assets/images/logo_masmag.png');
+
+/** ------------  Font ----------------- */
+
+$font-fire: 'Fira Code', monospace;
+$font-open: 'Open Sans', sans-serif;
+$font-small: 14px;
+$font-normal: 16px;
+$font-medium: 18px;
+$font-medium-l: 20px;
+$font-title: 52px;
+$height-normal: 450;
+
+
+/** ------------- Default Primary Style - Mobile First ------------- */
+
+body {
+  font-family: $font-fire;
+  font-style: normal;
+}
+
+/* Hamburger menu */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+
+  &-top, &-middle, &-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: $color-primary;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+
+  &-middle {
+    transform: translateY(7px);
+  }
+
+  &-bottom {
+    transform: translateY(14px);
+  }
+
+  &.open {
+
+    .hamburger-top {
+      transform: rotate(45deg) translateY(6px) translate(6px);
+    }
+
+    .hamburger-middle {
+      display: none;
+    }
+
+    .hamburger-bottom {
+      transform: rotate(-45deg) translateY(6px) translate(-6px);
+    }
+  }
+}
+
+
+/* -------------- Default ----------------- */
+
+.text {
+  color: $font-color-pre;
+  font-weight: 450;
+
+  &--pre-title {
+    font-size: $font-medium;
+    line-height: 24px;
+  }
+
+  &--comment {
+    font-size: $font-small;
+    line-height: 140%;
+    color: $font-color-comment;
+  }
+}
+
+
+#menu {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: .8s;
+  -webkit-transition: .8s;
+
+  &.active {
+    visibility: visible;
+    height: 200px;
+  }
+}
