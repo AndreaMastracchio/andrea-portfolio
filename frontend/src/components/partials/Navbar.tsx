@@ -1,5 +1,5 @@
 /* Core */
-import React, {FC} from 'react'
+import React, {FC, useEffect} from 'react'
 import {NavLink, useLocation} from "react-router-dom";
 
 /* Hooks */
@@ -146,7 +146,7 @@ const Navbar: FC<Props> = () => {
                             className="px-2 border-borderLightGray border-b py-4
                                     md:h-[56px] w-full flex items-center justify-start
                                     hover:border-b-borderHover hover:border-b cursor-pointer"
-                            to={"/contact-me"}
+                            to={'/contact-me'}
                             style={isActive => ({
                                 borderBottomColor: location.pathname === '/contact-me' ? "#FEA55F" : ""
                             })}>

@@ -61,7 +61,7 @@ const Homepage: FC<Props> = () => {
 
             {/* Homepage */ }
             <section id="homepage">
-                <h1 className="text-white"> Homepage </h1>
+
             </section>
 
         </>
