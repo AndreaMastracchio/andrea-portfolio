@@ -7,3 +7,4 @@ frontend/public
 .idea
 
 backend/migrations
+backend/__pycache__
