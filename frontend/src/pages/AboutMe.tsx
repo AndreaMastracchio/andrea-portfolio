@@ -12,7 +12,6 @@ const AboutMe: FC<Props> = () => {
 
     const {handleAbout, handleFolder} = useStateAboutMe()
 
-
     return (
         <div id="about_me" className="flex flex-col h-full xl:flex-row">
             <div className="md:hidden min-h-[35px] flex justify-start items-center py-7 px-4">
@@ -56,7 +55,7 @@ const AboutMe: FC<Props> = () => {
                         <p className="text-white text-sm lg:text-textLightGray "> personal info </p>
                     </div>
                     <ul id="personal-info-menu"
-                        className="hidden open-card w-full space-y-1 border-b border-borderLightGray pl-2 pr-3 py-2 md:block">
+                        className="open-card w-full space-y-1 border-b border-borderLightGray pl-2 pr-3 py-2">
                         <li className="flex flex-col gap-1 personal-ul-list cursor-pointer " id="bio"
                             onClick={(e: React.MouseEvent<HTMLLIElement>) => handleFolder(e)}>
                             <div className="flex items-center gap-3">
@@ -240,7 +239,7 @@ const AboutMe: FC<Props> = () => {
                         <p className="text-white lg:text-textLightGray text-sm"> contacts </p>
                     </div>
                     <ul id="personal-contacts-menu"
-                        className="hidden lg:open-card w-full border-b border-borderLightGray pl-2 pr-3 py-2 ">
+                        className="open-card w-full border-b border-borderLightGray pl-2 pr-3 py-2 ">
                         <li className="flex justify-start items-center gap-3 pb-3 pt-2" id="bio">
                             <div className="min-w-[15px] flex justify-center items-center">
                                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
