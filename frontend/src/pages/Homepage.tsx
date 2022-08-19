@@ -5,62 +5,57 @@ import React, {FC} from 'react';
 import {Props} from '../interface/PropsInterface'
 
 const Homepage: FC<Props> = () => {
+
     return (
         <>
-            {/*<section className={'container mx-auto md:flex md:justify-center items-start'}>*/}
-            {/*    <div className={'mt-[96px] ml-[27px] mr-[27px]'}>*/}
-            {/*        <p className={'text-white text--pre-title'}> Hi all. I am </p>*/}
+            {/* Homepage */}
+            <section id="homepage" className="flex justify-start items-center h-full md:justify-around">
 
+                <div className="flex flex-col justify-start gap-2 py-24 px-4 md:pt-16">
+                    <p className="text-white text-base"> Hi all. I am </p>
+                    <h1 className="text-white text-4xl">
+                        Andrea <br/>
+                        Gregorio <br/>
+                        Mastracchio <br/>
+                    </h1>
+                    <p className="text-developerGreen md:text-developerBlue leading-7
+                                       text-base md:leading-9">
+                        &#62; Full-stack developer
+                    </p>
+                    <div className="flex flex-col pt-48 gap-2 md:pt-20">
+                        <p className="text-developerComment text-xs"> // find my profile on github </p>
+                        <p className="text-developerComment">
+                            <span className="text-developerBlue text-xs">const </span>
+                            <span className="text-developerGreen text-xs">githubLink</span>
+                            <span className="text-white text-xs"> = </span>
+                            <a className="text-developerString underline underline-offset-1 text-xs">"https://
+                                <br className="md:hidden"/>github.com/AndreaMastracchio"</a>
+                        </p>
+                    </div>
+                </div>
 
-            {/*    </div>*/}
-            {/*</section>*/}
-
-            {/*<section className={'container mx-auto md:flex md:justify-center items-start'}>*/}
-            {/*    <div className={'ml-[27px] mt-[196px]'}>*/}
-            {/*        <p className={'text--comment'}> // find my profile on github </p>*/}
-            {/*    </div>*/}
-            {/*</section>*/}
-
-
-            {/* Homepage section */}
-            {/*<section id="homepage" className={'flex justify-center item-center h-4/5'}>*/}
-
-            {/*    { /* Flex container *!/*/}
-            {/*    <div className="container flex flex-col items-center justify-center*/}
-            {/*                    mt-0 mb-[15px] space-y-16 md:space-y-0 md:space-x-6*/}
-            {/*                    lg:flex-row md:justify-evenly md:mt-[96px]">*/}
-
-            {/*        /!* Left item *!/*/}
-            {/*        <div className="flex flex-col">*/}
-            {/*            <p className={'text-white text--pre-title'}> Hi all. I am </p>*/}
-            {/*            <h1 className={'text-white text-6xl md:leading-[62px]'}>*/}
-            {/*                Andrea <br/>*/}
-            {/*                Gregorio <br/>*/}
-            {/*                Mastracchio <br/>*/}
-            {/*            </h1>*/}
-            {/*            <p className={'text-developerGreen md:text-developerBlue leading-7 text-xl md:text-3xl md:leading-9'}>*/}
-            {/*                &#62; Full-stack developer*/}
-            {/*            </p>*/}
-            {/*        </div>*/}
-
-            {/*        /!* Right item *!/*/}
-            {/*        <div className="flex flex-col">*/}
-            {/*            <p className={'text-white text--pre-title'}> Hi all. I am </p>*/}
-            {/*            <h1 className={'text-white text-6xl md:leading-[62px]'}>*/}
-            {/*                Andrea <br/>*/}
-            {/*                Gregorio <br/>*/}
-            {/*                Mastracchio <br/>*/}
-            {/*            </h1>*/}
-            {/*            <p className={'text-developerGreen md:text-developerBlue leading-7 text-xl md:text-3xl md:leading-9'}>*/}
-            {/*                &#62; Full-stack developer*/}
-            {/*            </p>*/}
-            {/*        </div>*/}
-
-            {/*    </div>*/}
-            {/*</section>*/}
-
-            {/* Homepage */ }
-            <section id="homepage">
+                <div className="hidden flex-col justify-start gap-2 py-24 px-4 md:pt-16 md:flex">
+                    <p className="text-white text-base"> Hi all. I am </p>
+                    <h1 className="text-white text-4xl">
+                        Andrea <br/>
+                        Gregorio <br/>
+                        Mastracchio <br/>
+                    </h1>
+                    <p className="text-developerGreen md:text-developerBlue leading-7
+                                       text-base md:leading-9">
+                        &#62; Full-stack developer
+                    </p>
+                    <div className="flex flex-col pt-48 gap-2 md:pt-20">
+                        <p className="text-developerComment text-xs"> // find my profile on github </p>
+                        <p className="text-developerComment">
+                            <span className="text-developerBlue text-xs">const </span>
+                            <span className="text-developerGreen text-xs">githubLink</span>
+                            <span className="text-white text-xs"> = </span>
+                            <a className="text-developerString underline underline-offset-1 text-xs">"https://
+                                <br className="md:hidden"/>github.com/AndreaMastracchio"</a>
+                        </p>
+                    </div>
+                </div>
 
             </section>
 

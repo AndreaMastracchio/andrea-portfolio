@@ -6,33 +6,27 @@ import {Props} from '../interface/PropsInterface'
 
 /* Components */
 import Navbar from "./partials/Navbar";
-import Footer from "./partials/Footer";
 
 const Layout: FC<Props> = ({children, ...props}) => {
+
     return (
+        <main className="flex bg-backgroundPrimary min-h-screen p-2">
+            <div className="container bg-backgroundPage border border-borderLightGray
+                            rounded-sm flex flex-col relative">
 
-        <main className={'bg-backgroundPrimary h-screen'}>
+                {/* Navbar */}
+                <Navbar />
 
-            {/* Page Container */}
-            <div className="p-4 h-full md:py-12">
-                <div className="container mx-auto bg-backgroundPage relative
-                                h-full border border-borderPrimary rounded-lg"
-                >
-
-                    {/* Navbar */}
-                    <Navbar/>
-
-                    {/* Page children */}
-                    <section id='page'>
-                        {children}
-                    </section>
-
-                    {/* Footer */}
-                    <Footer/>
-
+                <div className="flex-1">
+                    {children}
                 </div>
-            </div>
 
+                {/* Footer */}
+                <div className="hidden border-t border-borderLightGray min-h-[49.74px] md:block">
+                    fOOTER
+                </div>
+
+            </div>
         </main>
     )
 }

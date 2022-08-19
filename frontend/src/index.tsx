@@ -9,6 +9,7 @@ import './assets/style/_main.scss';
 /* Components */
 import Layout from "./components/Layout";
 import Homepage from "./pages/Homepage";
+import AboutMe from "./pages/AboutMe";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -20,6 +21,7 @@ root.render(
             <Layout>
                 <Routes>
                     <Route path='/' element={<Homepage/>}/>
+                    <Route path='/about-me' element={<AboutMe/>}/>
                 </Routes>
             </Layout>
         </Router>

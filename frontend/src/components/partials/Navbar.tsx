@@ -1,5 +1,5 @@
 /* Core */
-import React, {FC, useEffect} from 'react'
+import React, {FC, useEffect, useState} from 'react'
 import {NavLink, useLocation} from "react-router-dom";
 
 /* Hooks */
@@ -10,155 +10,107 @@ import {Props} from '../../interface/PropsInterface'
 
 const Navbar: FC<Props> = () => {
 
-    const {handleMenu} = useStateMenu()
-    const location = useLocation();
+    const {handleMenu, location} = useStateMenu()
 
     return (
-        <nav className="relative container mx-auto border-b border-borderLightGray md:h-[56px]">
-
-
-            {/* Flex container */}
-            <div className="flex justify-between items-center py-3 px-3 md:p-0">
-
-                {/* Logo - Name */}
-                <NavLink
-                    to={"/"}
-                    className="md:border-r md:border-borderLightGray cursor-pointer
-                                md:flex md:justify-start md:items-center md:h-[56px] md:w-4/12 md:pl-4">
-
-                    <p className="text-textLightGray font-2xl">andrea-gregorio-mastracchio</p>
-                </NavLink>
-
-                {/* Menu */}
-                <div className="hidden md:flex md:justify-between md:items-center md:w-8/12 md:h-[56px]">
-                    <NavLink
-                        className="px-2 border-r border-borderLightGray border-b
-                                    md:h-[56px] w-3/12 flex items-center justify-center
-                                    hover:border-b-borderHover hover:border-b cursor-pointer"
-                        to={"/"}
-                        style={isActive => ({
-                            borderBottomColor: location.pathname === '/' ? "#FEA55F" : ""
-                        })}>
-                        <p className="text-white">
-                            _hello
-                        </p>
+        <header>
+            <nav className="relative flex items-center border-b border-borderLightGray min-h-[56.19px]">
+                <div className="text-textLightGray text-[14px] basis-8/12 pl-2 md:basis-4/12">
+                    andrea-gregorio-mastracchio
+                </div>
+                <div className="basis-8/12 h-full hidden md:flex ">
+                    <NavLink to={"/"}
+                             style={isActive => ({
+                                 borderBottom: location.pathname === '/' ? "1px solid #FEA55F" : "",
+                             })}
+                             className="flex items-center justify-center text-white h-full min-h-[56.19px]
+                                        text-sm grow-[1] border-r border-l border-borderLightGray
+                                        hover:border-b-borderHover hover:border-b cursor-pointer">
+                        _hello
                     </NavLink>
-                    <NavLink
-                        className="px-2 border-r border-borderLightGray border-b
-                                    md:h-[56px] w-3/12 flex items-center justify-center
-                                    hover:border-b-borderHover hover:border-b cursor-pointer"
-                        to={"/about-me"}
-                        style={isActive => ({
-                            borderBottomColor: location.pathname === '/about-me' ? "#FEA55F" : ""
-                        })}>
-                        <p className="text-white">
-                            _about-me
-                        </p>
+                    <NavLink to={"/about-me"}
+                             style={isActive => ({
+                                 borderBottom: location.pathname === '/about-me' ? "1px solid #FEA55F" : "",
+                             })}
+                             className=" flex items-center justify-center text-white h-full min-h-[56.19px]
+                                        text-sm grow-[1] border-r border-borderLightGray
+                                        hover:border-b-borderHover hover:border-b cursor-pointer">
+                        _about-me
                     </NavLink>
-                    <NavLink
-                        className="px-2 border-r border-borderLightGray border-b
-                                    md:h-[56px] w-3/12 flex items-center justify-center
-                                    hover:border-b-borderHover hover:border-b cursor-pointer"
-                        to={"/projects"}
-                        style={isActive => ({
-                            borderBottomColor: location.pathname === '/projects' ? "#FEA55F" : ""
-                        })}>
-                        <p className="text-white">
-                            _projects
-                        </p>
+                    <NavLink to={"/projects"}
+                             style={isActive => ({
+                                 borderBottom: location.pathname === '/projects' ? "1px solid #FEA55F" : "",
+                             })}
+                             className="flex items-center justify-center text-white h-full min-h-[56.19px]
+                                        text-sm grow-[1] border-r border-borderLightGray
+                                        hover:border-b-borderHover hover:border-b cursor-pointer">
+                        _projects
                     </NavLink>
-                    <div className="text-white border-r border-borderLightGray
-                                    md:h-[56px] w-4/12">
-                    </div>
-                    <NavLink
-                        className="px-2 border-r border-borderLightGray border-b
-                                    md:h-[56px] w-3/12 flex items-center justify-center
-                                    hover:border-b-borderHover hover:border-b cursor-pointer"
-                        to={"/contact-me"}
-                        style={isActive => ({
-                            borderBottomColor: location.pathname === '/contact-me' ? "#FEA55F" : ""
-                        })}>
-                        <p className="text-white">
-                            _contact-me
-                        </p>
+                    <div className="grow-[5]"></div>
+                    <NavLink to={'/contact-me'}
+                             style={isActive => ({
+                                 borderBottom: location.pathname === '/contact-me' ? "1px solid #FEA55F" : "",
+                             })}
+                             className="flex items-center justify-center text-white h-full min-h-[56.19px]
+                                        text-sm grow-[1] border-l border-borderLightGray
+                                        hover:border-b-borderHover hover:border-b cursor-pointer"
+                    >
+                        _contact-me
                     </NavLink>
                 </div>
-
-                {/* Hamburger menu */}
-                <div
-                    id='hamburger-menu'
-                    onClick={handleMenu}
-                    className="block hamburger md:hidden focus:outline-none mt-3 right-6 absolute"
-                >
+                <div className="grow-[2] flex items-center justify-end pr-4 relative hamburger min-h-[24px] md:hidden"
+                     id='hamburger-menu'
+                     onClick={handleMenu}>
                     <span className="hamburger-top"></span>
                     <span className="hamburger-middle"></span>
                     <span className="hamburger-bottom"></span>
                 </div>
+            </nav>
 
-                {/* Mobile menu item */}
-                <div className="md:hidden">
-                    <div
-                        id="items-menu"
-                        className="absolute flex-col items-center hidden
-                                   self-end mt-6 index z-50 bg-backgroundPage
-                                   sm:w-auto sm:self-center left-0 right-0"
+            <div className="hidden absolute bg-backgroundPage bottom-[49.74px] w-full top-[56.19px]"
+                 id="items-menu">
+                <div className="flex flex-col ">
+                    <NavLink to={"/"}
+                             style={isActive => ({
+                                 borderBottom: location.pathname === '/' ? "1px solid #FEA55F" : "",
+                             })}
+                             className="flex items-center justify-start py-4 pl-3 text-white h-full
+                                        text-sm grow-[1] border-b border-borderLightGray
+                                        hover:border-b-borderHover hover:border-b cursor-pointer">
+                        _hello
+                    </NavLink>
+                    <NavLink to={"/about-me"}
+                             style={isActive => ({
+                                 borderBottom: location.pathname === '/about-me' ? "1px solid #FEA55F" : "",
+                             })}
+                             className=" flex items-center justify-start py-4 pl-3 text-white h-full
+                                        text-base grow-[1] border-b border-borderLightGray
+                                        hover:border-b-borderHover hover:border-b cursor-pointer">
+                        _about-me
+                    </NavLink>
+                    <NavLink to={"/projects"}
+                             style={isActive => ({
+                                 borderBottom: location.pathname === '/projects' ? "1px solid #FEA55F" : "",
+                             })}
+                             className="flex items-center justify-start py-4 pl-3 text-white h-full
+                                        text-base grow-[1] border-b border-borderLightGray
+                                        hover:border-b-borderHover hover:border-b cursor-pointer">
+                        _projects
+                    </NavLink>
+                    <div className="grow-[5]"></div>
+                    <NavLink to={'/contact-me'}
+                             style={isActive => ({
+                                 borderBottom: location.pathname === '/contact-me' ? "1px solid #FEA55F" : "",
+                             })}
+                             className="flex items-center justify-start py-4 pl-3 text-white h-full
+                                        text-base grow-[1] border-b border-borderLightGray
+                                        hover:border-b-borderHover hover:border-b cursor-pointer"
                     >
-                        <NavLink
-                            className="px-2 border-borderLightGray border-b py-4
-                                    md:h-[56px] w-full flex items-center justify-start
-                                    hover:border-b-borderHover hover:border-b cursor-pointer"
-                            to={"/"}
-                            style={isActive => ({
-                                borderBottomColor: location.pathname === '/' ? "#FEA55F" : ""
-                            })}>
-                            <p className={`text-white ${location.pathname === '/' ? "text-borderHover" : "" ? "active" : ""}`}>
-                                _hello
-                            </p>
-                        </NavLink>
-                        <NavLink
-                            className="px-2 border-borderLightGray border-b py-4
-                                    md:h-[56px] w-full flex items-center justify-start
-                                    hover:border-b-borderHover hover:border-b cursor-pointer"
-                            to={"/about-me"}
-                            style={isActive => ({
-                                borderBottomColor: location.pathname === '/about-me' ? "#FEA55F" : ""
-                            })}>
-                            <p className={`text-white ${location.pathname === '/about-me' ? "text-borderHover" : "" ? "active" : ""}`}>
-                                _about-me
-                            </p>
-                        </NavLink>
-                        <NavLink
-                            className="px-2 border-borderLightGray border-b py-4
-                                    md:h-[56px] w-full flex items-center justify-start
-                                    hover:border-b-borderHover hover:border-b cursor-pointer"
-                            to={"/projects"}
-                            style={isActive => ({
-                                borderBottomColor: location.pathname === '/projects' ? "#FEA55F" : ""
-                            })}>
-                            <p className={`text-white ${location.pathname === '/projects' ? "text-borderHover" : "" ? "active" : ""}`}>
-                                _projects
-                            </p>
-                        </NavLink>
-                        <div className="text-white border-r border-borderLightGray
-                                    md:h-[56px] w-full">
-                        </div>
-                        <NavLink
-                            className="px-2 border-borderLightGray border-b py-4
-                                    md:h-[56px] w-full flex items-center justify-start
-                                    hover:border-b-borderHover hover:border-b cursor-pointer"
-                            to={'/contact-me'}
-                            style={isActive => ({
-                                borderBottomColor: location.pathname === '/contact-me' ? "#FEA55F" : ""
-                            })}>
-                            <p className={`text-white ${location.pathname === '/contact-me' ? "text-borderHover" : "" ? "active" : ""}`}>
-                                _contact-me
-                            </p>
-                        </NavLink>
-                    </div>
+                        _contact-me
+                    </NavLink>
                 </div>
-
             </div>
-        </nav>
+        </header>
     )
 }
 
