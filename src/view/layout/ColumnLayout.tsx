@@ -39,7 +39,7 @@ const ColumnLayout: FC<ColumnProps> = ({
                 </div>
 
                 {/* Central Section */}
-                <div className="flex flex-col md:basis-8/12 border-l border-borderLightGray xl:flex-row">
+                <div className="flex flex-col md:basis-8/12 lg:border-l border-borderLightGray xl:flex-row">
                     {centralSection}
                 </div>
 

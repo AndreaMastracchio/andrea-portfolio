@@ -9,3 +9,9 @@ export interface ColumnProps {
     centralSection?: JSX.Element|JSX.Element[]
     id_central_section?: string
 }
+
+export interface Card {
+    id_project: number
+    text: string
+    image: string
+}
