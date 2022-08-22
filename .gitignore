@@ -8,3 +8,7 @@ frontend/public
 
 backend/migrations
 backend/__pycache__
+
+node_modules
+yarn.lock
+yarn-error.log
