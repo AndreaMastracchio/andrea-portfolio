@@ -23,3 +23,4 @@ urlpatterns = [
     # re_path(r'^api/backend/$', views.students_list),
     # re_path(r'^api/backend/(?P<pk>[0-9]+)$', views.students_detail),
 ]
+
