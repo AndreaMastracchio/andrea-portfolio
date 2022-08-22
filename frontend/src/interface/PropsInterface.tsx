@@ -1,5 +1,11 @@
-import React, { ReactNode } from "react";
+import React, {ReactHTMLElement, ReactNode} from "react";
 
 export interface Props {
     children?: ReactNode
+}
+
+export interface ColumnProps {
+    folderSection?: JSX.Element|JSX.Element[]
+    centralSection?: JSX.Element|JSX.Element[]
+    id_central_section?: string
 }

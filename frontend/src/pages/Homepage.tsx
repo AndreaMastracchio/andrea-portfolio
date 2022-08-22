@@ -8,9 +8,11 @@ const Homepage: FC<Props> = () => {
 
     return (
         <>
+
             {/* Homepage */}
             <section id="homepage" className="flex justify-start items-center h-full md:justify-around">
 
+                {/* Items left */}
                 <div className="flex flex-col justify-start gap-2 py-24 px-4 md:pt-16">
                     <p className="text-white text-base"> Hi all. I am </p>
                     <h1 className="text-white text-4xl">
@@ -34,6 +36,7 @@ const Homepage: FC<Props> = () => {
                     </div>
                 </div>
 
+                {/* Items right */}
                 <div className="hidden flex-col justify-start gap-2 py-24 px-4 md:pt-16 md:flex">
                     <p className="text-white text-base"> Hi all. I am </p>
                     <h1 className="text-white text-4xl">
@@ -58,7 +61,6 @@ const Homepage: FC<Props> = () => {
                 </div>
 
             </section>
-
         </>
     )
 }

@@ -9,13 +9,16 @@ const useStateAboutMe = () => {
     const open = (element: HTMLElement) => {
         element.classList.remove('close-card')
         element.classList.add('open-card')
+        element.classList.add('md:open-card')
         element.classList.remove('hidden')
+        element.classList.add('md:block')
     }
 
     const close = (element: HTMLElement) => {
         element.classList.add('close-card')
         element.classList.remove('open-card')
-        element.classList.add('hidden')
+        element.classList.remove('md:open-card')
+        element.classList.remove('md:block')
     }
 
     const handleAbout = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -38,7 +41,7 @@ const useStateAboutMe = () => {
             case 'contacts':
                 let personal_contacts_box = document.getElementById('personal-contacts-menu')
                 if (personal_contacts_box) {
-                    if (personal_contacts_box?.classList.contains('open-card')) {
+                    if (personal_contacts_box?.classList.contains('md:open-card') || personal_contacts_box?.classList.contains('open-card')) {
                         close(personal_contacts_box)
                     } else {
                         open(personal_contacts_box)
@@ -86,7 +89,20 @@ const useStateAboutMe = () => {
         }
     }
 
-    return {handleAbout, location, handleFolder}
+    const openConsole = () => {
+            document.getElementById('about_me_box')?.classList.add('hidden')
+            document.getElementById('terminal-console')?.classList.add('open-card')
+        if (document.getElementById('terminal-console')?.classList.contains('hidden')) {
+            document.getElementById('terminal-console')?.classList.remove('hidden')
+        } else {
+            document.getElementById('terminal-console')?.classList.add('hidden')
+            document.getElementById('terminal-console')?.classList.remove('open-card')
+            document.getElementById('about_me_box')?.classList.remove('hidden')
+        }
+
+    }
+
+    return {handleAbout, location, handleFolder, openConsole}
 }
 
 export default useStateAboutMe

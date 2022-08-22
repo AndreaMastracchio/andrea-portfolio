@@ -29,7 +29,8 @@ module.exports = {
                 borderPrimary: '#1E2D3D',
                 borderHover: '#FEA55F',
                 backgroundAccordionMobile: '#1E2D3D',
-                none: 'unset'
+                none: 'unset',
+                backgroundConst: '#C98BDF'
             }
         },
     },

@@ -11,6 +11,7 @@ import Layout from "./components/Layout";
 import Homepage from "./pages/Homepage";
 import AboutMe from "./pages/AboutMe";
 import Project from "./pages/Project";
+import ContactMe from "./pages/ContactMe";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -24,6 +25,7 @@ root.render(
                     <Route path='/' element={<Homepage/>}/>
                     <Route path='/about-me' element={<AboutMe/>}/>
                     <Route path='/projects' element={<Project/>}/>
+                    <Route path='/contact-me' element={<ContactMe/>}/>
                 </Routes>
             </Layout>
         </Router>
