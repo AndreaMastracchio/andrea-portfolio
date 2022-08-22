@@ -2,13 +2,13 @@
 import React, {FC} from 'react';
 
 /* Interface */
-import {ColumnProps} from '../interface/PropsInterface'
+import {ColumnProps} from '../../interface/PropsInterface'
 
 /* Hooks */
-import useStateAboutMe from '../hooks/useStateAboutMe'
+import useStateAboutMe from '../../hooks/useStateAboutMe'
 
 /* Components */
-import SvgComponent from "./partials/SvgComponent";
+import SvgComponent from "../partials/SvgComponent";
 
 const ColumnLayout: FC<ColumnProps> = ({
                                            folderSection,
@@ -23,7 +23,7 @@ const ColumnLayout: FC<ColumnProps> = ({
             <section className="flex flex-col h-full xl:flex-row">
 
                 {/* Sidebar section */}
-                <div className="flex h-full md:basis-4/12" id="sidebar-section">
+                <div className="flex h-auto basis-auto xl:h-full xl:basis-4/12" id="sidebar-section">
 
                     {/* Icon section */}
                     <section className="hidden basis-2/12 justify-start flex-col items-center

@@ -2,11 +2,11 @@
 import React, {FC} from 'react';
 
 /* Interface */
-import {Props} from '../interface/PropsInterface'
+import {Props} from '../../interface/PropsInterface'
 
 /* Components */
-import Navbar from "./partials/Navbar";
-import Footer from "./partials/Footer";
+import Navbar from "../partials/Navbar";
+import Footer from "../partials/Footer";
 
 const Layout: FC<Props> = ({children}) => {
 

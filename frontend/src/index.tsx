@@ -7,11 +7,11 @@ import ReactDOM from 'react-dom/client';
 import './assets/style/_main.scss';
 
 /* Components */
-import Layout from "./components/Layout";
-import Homepage from "./pages/Homepage";
-import AboutMe from "./pages/AboutMe";
-import Project from "./pages/Project";
-import ContactMe from "./pages/ContactMe";
+import Layout from "./view/layout/Layout";
+import Homepage from "./view/pages/Homepage";
+import AboutMe from "./view/pages/AboutMe";
+import Project from "./view/pages/Project";
+import ContactMe from "./view/pages/ContactMe";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement

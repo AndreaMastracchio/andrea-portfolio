@@ -2,7 +2,7 @@
 import React, {FC} from 'react';
 
 /* Interface */
-import {Props} from '../interface/PropsInterface'
+import {Props} from '../../interface/PropsInterface'
 
 const Homepage: FC<Props> = () => {
 
