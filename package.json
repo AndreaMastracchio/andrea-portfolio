@@ -39,7 +39,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.js --watch --mode development",
-    "build": "webpack --config webpack.config.js --mode production react-scripts build"
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "eslintConfig": {
     "extends": [
