@@ -40,8 +40,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-app-rewired start ",
+    "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "eject": "react-app-rewired eject",
     "postinstall": "npm run build"
   },
   "eslintConfig": {
@@ -70,6 +71,7 @@
     "ts-loader": "^9.3.1"
   },
   "engines": {
-    "node": ">=14.18.1"
+    "node": ">=14.18.1",
+    "npm": ">= 5.6.0"
   }
 }
