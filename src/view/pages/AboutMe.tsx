@@ -1,8 +1,6 @@
 /* Core */
 import React, {FC} from 'react'
 import {CodeBlock, dracula} from "react-code-blocks";
-// @ts-ignore
-import Terminal from 'react-console-emulator'
 
 /* Interface */
 import {Props} from '../../interface/PropsInterface'
@@ -17,14 +15,6 @@ import ContactsAccordion from "../partials/ContactsAccordion";
 const AboutMe: FC<Props> = () => {
 
     const {handleAbout, handleFolder} = useStateAboutMe()
-
-    const commands = {
-        echo: {
-            description: 'Echo a passed string.',
-            usage: 'echo <string>',
-            fn: (...args: any[]) => args.join(' ')
-        }
-    }
 
     const folderSection = (
         <div className="md:basis-10/12 grow">
@@ -461,7 +451,6 @@ const AboutMe: FC<Props> = () => {
             </div>
         </>
     )
-
 
     return (
         <>
