@@ -78,7 +78,7 @@ const useStateAboutMe = () => {
         element.classList.remove('open-card')
     }
 
-    const handleFolder = (e: React.MouseEvent<HTMLLIElement>) => {
+    const handleFolder = (e: React.MouseEvent<HTMLLIElement>, menu_folder: string) => {
         let element = e.currentTarget as HTMLElement
         let personal_ul_list = document.getElementsByClassName('personal-ul-list')
         if (!e.currentTarget.classList.contains('open-card')) {
@@ -86,6 +86,24 @@ const useStateAboutMe = () => {
             e.currentTarget.classList.add('open-card')
         } else {
             closeAccordion(element)
+        }
+
+        switch (menu_folder) {
+            case 'bio':
+                document.getElementById('about_me_text')?.classList.remove('hidden')
+                document.getElementById('interests_text')?.classList.add('hidden')
+                document.getElementById('education_text')?.classList.add('hidden')
+                break;
+            case 'interests':
+                document.getElementById('interests_text')?.classList.remove('hidden')
+                document.getElementById('education_text')?.classList.add('hidden')
+                document.getElementById('about_me_text')?.classList.add('hidden')
+                break;
+            case 'education':
+                document.getElementById('education_text')?.classList.remove('hidden')
+                document.getElementById('interests_text')?.classList.add('hidden')
+                document.getElementById('about_me_text')?.classList.add('hidden')
+                break;
         }
     }
 
