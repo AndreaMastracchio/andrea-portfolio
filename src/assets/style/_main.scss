@@ -155,6 +155,12 @@ div[name="react-console-emulator"] {
   }
 }
 
+.countdown {
+  span:first-child {
+    color: white;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .coding {
     code {

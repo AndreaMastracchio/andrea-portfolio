@@ -6,6 +6,9 @@ module.exports = {
             center: true,
         },
         extend: {
+            backgroundImage: {
+                'hero-pattern': "url('https://www.w3schools.com//w3images/forestbridge.jpg')",
+            },
             gridTemplateRows: {
                 'layout': 'auto minmax(400px, 1fr) auto',
             },

@@ -26,7 +26,7 @@ const ColumnLayout: FC<ColumnProps> = ({folderSection, centralSection, id_centra
 
     return (
         <>
-            <section className="flex flex-col h-full xl:flex-row">
+            <section className="flex flex-col h-full xl:flex-row">s
 
                 {/* Sidebar section */}
                 <div className="flex h-auto basis-auto xl:h-full xl:min-w-[33.3%]" id="sidebar-section">
@@ -57,6 +57,7 @@ const ColumnLayout: FC<ColumnProps> = ({folderSection, centralSection, id_centra
                         promptLabel={'nightmare@dev:~$'}
                     />
                 </div>
+
             </section>
         </>
     )
