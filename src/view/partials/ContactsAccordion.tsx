@@ -11,10 +11,10 @@ const ContactsAccordion = () => {
     return (
         <>
             <div
-                className="min-h-[25px] mt-1 bg-backgroundAccordionMobile flex items-center gap-2
-                                    border-b border-borderLightGray pl-2 pr-3 py-2
-                                    cursor-pointer lg:bg-none lg:mt-0"
-                id="contacts" onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAbout(e)}>
+                className="min-h-[25px] mt-1 bg-backgroundAccordionMobile flex items-center
+                           border-b border-borderLightGray pl-2 pr-3 py-2 gap-2
+                           cursor-pointer lg:bg-none lg:mt-0"
+                onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAbout(e, 'contacts')}>
                 <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.74998 6.65186L0.499969 0.651856L9 0.651855L4.74998 6.65186Z" fill="white"/>
                 </svg>
@@ -32,7 +32,7 @@ const ContactsAccordion = () => {
                         </svg>
                     </div>
                     <p className="text-textLightGray text-sm">
-                        andrea@ebranditalia.com
+                        andreamastracchio@live.com
                     </p>
                 </li>
                 <li className="flex justify-start items-center gap-3" id="bio">
