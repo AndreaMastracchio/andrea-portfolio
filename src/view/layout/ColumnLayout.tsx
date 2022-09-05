@@ -26,10 +26,11 @@ const ColumnLayout: FC<ColumnProps> = ({folderSection, centralSection, id_centra
 
     return (
         <>
-            <section className="flex flex-col h-full xl:flex-row">
+            <div className="flex flex-col h-full lg:flex-row">
 
                 {/* Sidebar section */}
-                <div className="flex h-auto basis-auto xl:h-full xl:min-w-[33.3%]" id="sidebar-section">
+                <section className="flex h-auto basis-auto xl:h-full xl:basis-3/12"
+                         id="sidebar-section">
 
                     {/* Icon section */}
                     <section className="hidden w-2/12 justify-start flex-col items-center
@@ -42,15 +43,14 @@ const ColumnLayout: FC<ColumnProps> = ({folderSection, centralSection, id_centra
                     {/* Folder Section */}
                     {folderSection}
 
-                </div>
+                </section>
 
                 {/* Central Section */}
-                <div id="about_me_box"
-                     className="flex flex-col md:min-w-[66.6%] lg:border-l border-borderLightGray xl:flex-row">
+                <div className="flex flex-col md:min-w-[66.6%] lg:border-l border-borderLightGray xl:flex-row">
                     {centralSection}
                 </div>
                 <div id="terminal-console"
-                     className="hidden flex flex-col h-full w-full lg:border-l border-borderLightGray xl:flex-row">
+                     className="hidden flex flex-col h-full w-full md:border-l border-borderLightGray md:flex-row">
                     <Terminal
                         commands={commands}
                         welcomeMessage={'Benvenuto in agm-site'}
@@ -58,7 +58,7 @@ const ColumnLayout: FC<ColumnProps> = ({folderSection, centralSection, id_centra
                     />
                 </div>
 
-            </section>
+            </div>
         </>
     )
 }

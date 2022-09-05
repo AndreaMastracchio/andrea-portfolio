@@ -12,16 +12,20 @@ import ColumnLayout from "../layout/ColumnLayout";
 import useStateAboutMe from "../../hooks/useStateAboutMe";
 import ContactsAccordion from "../partials/ContactsAccordion";
 
+/* Hooks */
+import text from '../utils/Text'
+
 const AboutMe: FC<Props> = () => {
 
     const {handleAbout, handleFolder} = useStateAboutMe()
+    const {about_me_text, interests, education} = text()
 
     const folderSection = (
-        <div className="md:basis-10/12 grow">
+        <div className="md:w-3/12 grow">
             <div className="min-h-[25px] bg-backgroundAccordionMobile flex items-center
                                    gap-2 border-b border-borderLightGray pl-2 pr-3 py-2
                                    cursor-pointer lg:bg-none"
-                 id="personal-info" onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAbout(e)}>
+                 onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAbout(e, 'personal-info')}>
                 <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.74998 6.65186L0.499969 0.651856L9 0.651855L4.74998 6.65186Z" fill="white"/>
                 </svg>
@@ -70,7 +74,7 @@ const AboutMe: FC<Props> = () => {
                                         fill="#81A1C1"/>
                                 </svg>
                                 <p className="text-textLightGray text-sm">
-                                    about-me
+                                    about-me.txt
                                 </p>
                             </li>
                         </ul>
@@ -116,18 +120,7 @@ const AboutMe: FC<Props> = () => {
                                         fill="#81A1C1"/>
                                 </svg>
                                 <p className="text-textLightGray text-sm">
-                                    high-school
-                                </p>
-                            </li>
-                            <li className="flex items-center gap-3 cursor-pointer ">
-                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.44684 0.832031H16.0466C16.2617 0.832031 16.468 0.917486 16.6201 1.0696C16.7722 1.22171 16.8577 1.42801 16.8577 1.64313V14.6207C16.8577 14.8358 16.7722 15.0421 16.6201 15.1942C16.468 15.3463 16.2617 15.4318 16.0466 15.4318H1.44684C1.23172 15.4318 1.02542 15.3463 0.873307 15.1942C0.721197 15.0421 0.635742 14.8358 0.635742 14.6207V1.64313C0.635742 1.42801 0.721197 1.22171 0.873307 1.0696C1.02542 0.917486 1.23172 0.832031 1.44684 0.832031ZM4.69122 10.9707V7.72635L6.31342 9.34854L7.93561 7.72635V10.9707H9.5578V5.29306H7.93561L6.31342 6.91525L4.69122 5.29306H3.06903V10.9707H4.69122ZM13.6133 8.53745V5.29306H11.9911V8.53745H10.3689L12.8022 10.9707L15.2355 8.53745H13.6133Z"
-                                        fill="#81A1C1"/>
-                                </svg>
-                                <p className="text-textLightGray text-sm">
-                                    high-school
+                                    interest.txt
                                 </p>
                             </li>
                         </ul>
@@ -173,18 +166,7 @@ const AboutMe: FC<Props> = () => {
                                         fill="#81A1C1"/>
                                 </svg>
                                 <p className="text-textLightGray text-sm">
-                                    high-school
-                                </p>
-                            </li>
-                            <li className="flex items-center gap-3 cursor-pointer ">
-                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.44684 0.832031H16.0466C16.2617 0.832031 16.468 0.917486 16.6201 1.0696C16.7722 1.22171 16.8577 1.42801 16.8577 1.64313V14.6207C16.8577 14.8358 16.7722 15.0421 16.6201 15.1942C16.468 15.3463 16.2617 15.4318 16.0466 15.4318H1.44684C1.23172 15.4318 1.02542 15.3463 0.873307 15.1942C0.721197 15.0421 0.635742 14.8358 0.635742 14.6207V1.64313C0.635742 1.42801 0.721197 1.22171 0.873307 1.0696C1.02542 0.917486 1.23172 0.832031 1.44684 0.832031ZM4.69122 10.9707V7.72635L6.31342 9.34854L7.93561 7.72635V10.9707H9.5578V5.29306H7.93561L6.31342 6.91525L4.69122 5.29306H3.06903V10.9707H4.69122ZM13.6133 8.53745V5.29306H11.9911V8.53745H10.3689L12.8022 10.9707L15.2355 8.53745H13.6133Z"
-                                        fill="#81A1C1"/>
-                                </svg>
-                                <p className="text-textLightGray text-sm">
-                                    high-school
+                                    education.txt
                                 </p>
                             </li>
                         </ul>
@@ -198,17 +180,14 @@ const AboutMe: FC<Props> = () => {
     const centralSection = (
         <>
             {/* Info me */}
-            <div className="min-w-[60%]">
-
-                <div id="card-open" className="flex flex-col h-full">
-
+            <div className="w-full">
+                <div className="flex flex-col h-full">
                     <div className="hidden md:flex border-b border-borderLightGray w-full">
                         <div
                             className="min-h-[35px] flex items-center gap-2 pl-2 pr-3 py-2
                                            border-r border-borderLightGray cursor-pointer">
                             <p className="text-textLightGray text-sm"> personal info </p>
-                            <div id="info-card"
-                                 onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAbout(e)}>
+                            <div onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAbout(e, 'info-card')}>
                                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -220,94 +199,39 @@ const AboutMe: FC<Props> = () => {
                     </div>
 
                     {/* About me */}
-                    <div id="about_me_text" className="flex flex-col gap-4 px-2 py-2 coding basis-full">
-                        <div className="text-start pt-4 text-textLightGray md:hidden">
-                            // personal-info / bio
-                        </div>
+                    <div id="about-me-text"
+                         className="flex flex-col gap-4 px-2
+                                    py-2 coding basis-full open-card">
                         <CodeBlock
-                            className="whitespace-pre text-sm "
-                            text={'/**\n' +
-                                ' * About me\n' +
-                                ' * \n' +
-                                ' * Sono appassionato di informatica.\n' +
-                                ' * É un modo molto interessante. \n' +
-                                ' * Ho cominciato a lavorare presso un computer discount \n' +
-                                ' * dove all`approccio fisico (CPU, GPU..), ho aggiunto \n' +
-                                ' * quello logico, entrando nel modo della programmazione \n' +
-                                ' * fino a proseguire i miei studi all`Universitá \n' +
-                                ' * Durante il periodo universitario ho lavorato e \n' +
-                                ' * studiato ottenendo buoni risultati. Ho ottime \n' +
-                                ' * capacitá relazionali in anche con interlocutori  \n' +
-                                ' * professionali, capacitá di rapporto con le persone, \n' +
-                                ' * massima disponibilitá e apertura alle nuove conoscenze  \n' +
-                                ' * ed esperienze, umane e professionali. Sono una persona \n' +
-                                ' * dinamica e molto intraprendente. Adoro la musica tanto che  \n' +
-                                ' * anche se in epoca digitale collezione ancora vinili. \n' +
-                                ' * Ho frequentato il conservatorio di musica di Pesaro e \n' +
-                                '* suono diversi strumenti musicali. \n' +
-                                ' * Sono anche un grande appassionato di anime e manga. \n' +
-                                ' * Oltre a questo la mia piu grande passione sono  \n' +
-                                ' * le moto, dopo il giro  di francia e spanga mi sto  \n' +
-                                ' * organizzando per capo nord. Speriamo presto! \n' +
-                                ' * Adoro anche gli sport di calcio e tennis, oltre che  \n' +
-                                ' * essere un giocatore. amatoriale \n' +
-                                ' * \n' +
-                                '**/\n'
-                            }
+                            text={about_me_text}
                             language={'javascript'}
-                            showLineNumbers={true}
-                            theme={dracula}
+                            paragraph={'// personal-info / bio'}
                         />
                     </div>
 
                     {/* Interests */}
-                    <div id="interests_text" className="flex flex-col gap-4 px-2 py-2 coding basis-full hidden">
-                        <div className="text-start pt-4 text-textLightGray md:hidden">
-                            // interests
-                        </div>
+                    <div id="interests-text"
+                         className="flex flex-col gap-4 px-2
+                                    py-2 coding basis-full close-card"
+                    >
                         <CodeBlock
-                            className="whitespace-pre text-sm "
-                            text={'/**\n' +
-                                ' * Interests \n' +
-                                ' * \n' +
-                                ' * Il mio grande interesse é l`informatica. \n' +
-                                ' * Adoro programmare e studiare nuovi linguaggi e metodologie. \n' +
-                                ' * Sono sicuramente molto attratto dal mondo web. \n' +
-                                ' * Ho un grande interesse nei confronti degli ecommerce, \n' +
-                                ' * a partire dal prodotto fino ad arrivare alla logistica. \n' +
-                                ' * Sono anche un grande appassionato di videogame  \n' +
-                                ' * a partire dai giochi di carte fino ad arrivare ai moba.  \n' +
-                                ' * \n' +
-                                '**/\n'
-                            }
+                            text={interests}
                             language={'javascript'}
-                            showLineNumbers={true}
-                            theme={dracula}
+                            paragraph={'// interests'}
                         />
                     </div>
 
                     {/* Education */}
-                    <div id="education_text" className="flex flex-col gap-4 px-2 py-2 coding basis-full hidden">
-                        <div className="text-start pt-4 text-textLightGray md:hidden">
-                            // education
-                        </div>
+                    <div id="education_text"
+                         className="flex flex-col gap-4 px-2
+                                    y-2 coding basis-full close-card"
+                    >
                         <CodeBlock
-                            className="whitespace-pre text-sm "
-                            text={'/**\n' +
-                                ' * Education \n' +
-                                ' * \n' +
-                                ' * Diplomato in ragioneria  \n' +
-                                ' * . \n' +
-                                ' * Laureato in Ingegneria Informatica. \n' +
-                                ' * \n' +
-                                '**/\n'
-                            }
+                            text={education}
                             language={'javascript'}
-                            showLineNumbers={true}
-                            theme={dracula}
+                            paragraph={'// education'}
                         />
                     </div>
-
                 </div>
             </div>
 

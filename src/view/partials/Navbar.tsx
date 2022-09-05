@@ -19,12 +19,12 @@ const Navbar: FC<Props> = () => {
                 <nav className="relative flex items-center border-b border-borderLightGray min-h-[56.19px]">
 
                     {/* Logo */ }
-                    <div className="text-textLightGray text-[14px] basis-8/12 pl-2 md:basis-4/12">
+                    <div className="text-textLightGray text-[14px] basis-8/12 pl-2 md:basis-3/12">
                         andrea-gregorio-mastracchio
                     </div>
 
                     {/* Menu desktop */ }
-                    <div className="basis-8/12 h-full hidden md:flex ">
+                    <div className="basis-9/12 h-full hidden md:flex ">
                         <NavLink to={"/"}
                                  style={isActive => ({
                                      borderBottom: location.pathname === '/' ? "1px solid #FEA55F" : "",
@@ -66,8 +66,7 @@ const Navbar: FC<Props> = () => {
                     </div>
 
                     {/* Hamburger Menu */ }
-                    <div
-                        className="grow-[2] flex items-center justify-end pr-4 relative hamburger min-h-[24px] md:hidden"
+                    <div className="grow-[2] flex items-center justify-end pr-4 relative hamburger min-h-[24px] md:hidden"
                         id='hamburger-menu'
                         onClick={handleMenu}>
                         <span className="hamburger-top"></span>

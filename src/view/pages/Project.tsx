@@ -76,7 +76,7 @@ const Project: FC<Props> = ({}) => {
                         <p className="text-textLightGray text-sm"> projects </p>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
                     {
                         cards.map(function (item: Card, i: number) {
                             return (
