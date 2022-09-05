@@ -143,7 +143,7 @@ const ContactMe = () => {
 
     const centralSection = (
         <>
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
                 <div className="flex flex-col h-full">
                     <div className="hidden md:flex border-b border-borderLightGray w-full">
                         <div
