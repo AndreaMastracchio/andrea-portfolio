@@ -88,7 +88,7 @@ const Project: FC<Props> = ({}) => {
                     </div>
                 </section>
             </div>
-            <div className="absolute top-[25%] left-[50%]">
+            <div className="absolute top-[20%] left-[30%] md:top-[25%] md:left-[50%]">
                 <p className="text-white text-2xl font-bold z-30"> Coming Soon </p>
                 <hr className="w-[100%] z-30"/>
                 <div className="z-30">

@@ -76,7 +76,7 @@ const Navbar: FC<Props> = () => {
                 </nav>
 
                 {/* Menu mobile */ }
-                <div className="hidden absolute bg-backgroundPage bottom-[49.74px] w-full top-[56.19px]"
+                <div className="hidden absolute bg-backgroundPage bottom-[49.74px] w-full top-[56.19px] z-50"
                      id="items-menu">
                     <div className="flex flex-col ">
                         <NavLink to={"/"}
