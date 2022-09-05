@@ -21,7 +21,7 @@ const ContactsAccordion = () => {
                 <p className="text-white lg:text-textLightGray text-sm"> contacts </p>
             </div>
             <ul id="personal-contacts-menu"
-                className="hidden md:block md:open-card w-full border-b border-borderLightGray pl-2 pr-3 py-2 ">
+                className="hidden md:block open-card w-full border-b border-borderLightGray pl-2 pr-3 py-2">
                 <li className="flex justify-start items-center gap-3 pb-3 pt-2" id="bio">
                     <div className="min-w-[15px] flex justify-center items-center">
                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
