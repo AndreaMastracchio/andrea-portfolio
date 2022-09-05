@@ -199,7 +199,7 @@ const AboutMe: FC<Props> = () => {
                     </div>
 
                     {/* About me */}
-                    <div id="about-me-text"
+                    <div id="about_me_text"
                          className="flex flex-col gap-4 px-2
                                     py-2 coding basis-full open-card">
                         <CodeBlock
@@ -210,7 +210,7 @@ const AboutMe: FC<Props> = () => {
                     </div>
 
                     {/* Interests */}
-                    <div id="interests-text"
+                    <div id="interests_text"
                          className="flex flex-col gap-4 px-2
                                     py-2 coding basis-full close-card"
                     >
