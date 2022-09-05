@@ -46,18 +46,17 @@ const ColumnLayout: FC<ColumnProps> = ({folderSection, centralSection, id_centra
                 </section>
 
                 {/* Central Section */}
-                <div className="flex flex-col md:min-w-[66.6%] lg:border-l border-borderLightGray xl:flex-row">
-                    {centralSection}
+                <div className="flex flex-col md:min-w-[75%] lg:border-l border-borderLightGray xl:flex-row">
+                    <div id="central_section" className="flex flex-col w-full lg:border-l border-borderLightGray xl:flex-row">{centralSection}</div>
+                    <div id="terminal-console"
+                         className="hidden flex flex-col h-full w-full md:border-l border-borderLightGray md:flex-row">
+                        <Terminal
+                            commands={commands}
+                            welcomeMessage={'Benvenuto in agm-site'}
+                            promptLabel={'nightmare@dev:~$'}
+                        />
+                    </div>
                 </div>
-                <div id="terminal-console"
-                     className="hidden flex flex-col h-full w-full md:border-l border-borderLightGray md:flex-row">
-                    <Terminal
-                        commands={commands}
-                        welcomeMessage={'Benvenuto in agm-site'}
-                        promptLabel={'nightmare@dev:~$'}
-                    />
-                </div>
-
             </div>
         </>
     )

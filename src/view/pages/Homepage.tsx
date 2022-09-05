@@ -16,7 +16,7 @@ const Homepage: FC<Props> = () => {
             <section id="homepage" className="flex h-full">
 
                 {/* Items left */}
-                <div className="min-w-1/2 px-6 flex justify-center items-center">
+                <div className="w-1/2 px-4 flex justify-center items-center">
                     <div className="">
                         <p className="text-white text-xl"> Hi all. I am </p>
                         <h1 className="text-white text-5xl md:text-6xl">

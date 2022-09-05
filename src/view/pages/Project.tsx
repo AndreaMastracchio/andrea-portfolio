@@ -67,26 +67,35 @@ const Project: FC<Props> = ({}) => {
     }
 
     const centralSection = (
-        <div className="basis-full">
-            <section className="flex flex-col h-full">
-                <div className="md:flex border-b border-borderLightGray w-full">
-                    <div
-                        className="min-h-[35px] flex items-center gap-2 pl-2 pr-3 py-2
+        <div className="relative w-full">
+            <div className="blur basis-full">
+                <section className="flex flex-col h-full">
+                    <div className="md:flex border-b border-borderLightGray w-full">
+                        <div
+                            className="min-h-[35px] flex items-center gap-2 pl-2 pr-3 py-2
                                            md:border-r border-borderLightGray cursor-pointer">
-                        <p className="text-textLightGray text-sm"> projects </p>
+                            <p className="text-textLightGray text-sm"> projects </p>
+                        </div>
                     </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                        {
+                            cards.map(function (item: Card, i: number) {
+                                return (
+                                    htmlCard(item, i)
+                                )
+                            })
+                        }
+                    </div>
+                </section>
+            </div>
+            <div className="absolute top-[25%] left-[50%]">
+                <p className="text-white text-2xl font-bold z-30"> Coming Soon </p>
+                <hr className="w-[100%] z-30"/>
+                <div className="z-30">
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-                    {
-                        cards.map(function (item: Card, i: number) {
-                            return (
-                                htmlCard(item, i)
-                            )
-                        })
-                    }
-                </div>
-            </section>
+            </div>
         </div>
+
     )
 
     return (
