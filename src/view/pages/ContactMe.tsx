@@ -119,7 +119,7 @@ const ContactMe = () => {
         '})'
 
     const message_container = (
-        <div className="w-1/2 lg:border-l border-borderLightGray pb-4">
+        <div className="w-full md:w-1/2 lg:border-l border-borderLightGray pb-4">
             <div
                 className="min-h-[37px] hidden items-center gap-2 border-b border-borderLightGray pl-2 pr-3 py-2 md:flex">
             </div>
