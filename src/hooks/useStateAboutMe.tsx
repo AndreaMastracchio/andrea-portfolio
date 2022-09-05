@@ -104,14 +104,14 @@ const useStateAboutMe = () => {
 
 
     const openConsole = () => {
-            document.getElementById('about_me_box')?.classList.add('hidden')
+            document.getElementById('central_section')?.classList.add('hidden')
             document.getElementById('terminal-console')?.classList.add('open-card')
         if (document.getElementById('terminal-console')?.classList.contains('hidden')) {
             document.getElementById('terminal-console')?.classList.remove('hidden')
         } else {
             document.getElementById('terminal-console')?.classList.add('hidden')
             document.getElementById('terminal-console')?.classList.remove('open-card')
-            document.getElementById('about_me_box')?.classList.remove('hidden')
+            document.getElementById('central_section')?.classList.remove('hidden')
         }
 
     }

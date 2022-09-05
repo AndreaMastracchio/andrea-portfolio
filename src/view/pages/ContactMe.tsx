@@ -1,5 +1,6 @@
 /* Core */
 import React, {useState} from 'react'
+import {CodeBlock, dracula} from "react-code-blocks";
 
 /* Layout */
 import ColumnLayout from "../layout/ColumnLayout";
@@ -8,9 +9,10 @@ import ContactsAccordion from "../partials/ContactsAccordion";
 const ContactMe = () => {
 
     const defaultMessage = 'Hi, I would like to contact you about a project I would like to realise. Could you give me some slots for a call? Thank you'
-    const [nameValue, setName] = useState('')
-    const [emailValue, setEmail] = useState('')
-    const [messageValue, setMessage] = useState(defaultMessage)
+    const [nameValue, setName] = useState<string>('Nome Cognome')
+    const [emailValue, setEmail] = useState<string>('Email')
+    const [messageValue, setMessage] = useState<string>(defaultMessage)
+    const dateValue = new Date()
 
     const folderSection = (
         <div className="md:basis-10/12 grow">
@@ -53,56 +55,44 @@ const ContactMe = () => {
         </div>
     )
 
+    const code_message =
+        'const button =  document.querySelector(\'#contact-form\')\n' +
+        'const message =  { \n' +
+            +'name: "' + nameValue + '"\n' +
+            'email: "' + emailValue + '"\n' +
+            'message: "' + defaultMessage + '"\n' +
+            'date: "' + dateValue + '"\n' +
+        '} \n' +
+        'const button =  button.addEventListener(\'click\', () => { \n' +
+        'form.send(message);\n' +
+        '})'
+
     const message_container = (
-        <div className="basis-6/12 lg:border-l border-borderLightGray pb-4">
+        <div className="w-1/2 lg:border-l border-borderLightGray pb-4">
             <div
                 className="min-h-[37px] hidden items-center gap-2 border-b border-borderLightGray pl-2 pr-3 py-2 md:flex">
             </div>
             <div className="py-2 px-3">
                 <p className="text-textLightGray text-sm"> // Code message: </p>
             </div>
-            <div className="flex flex-col mx-3 gap-5">
-                <div>
-                    <span className="text-backgroundConst">const&nbsp;</span>
-                    <span className="text-username">button&nbsp;</span>
-                    <span className="text-backgroundConst">=&nbsp;</span>
-                    <span className="text-username">&nbsp;document.querySelector(<span
-                        className="text-borderHover">'#contact-form'</span>)</span>
-                </div>
-                <div>
-                    <span className="text-backgroundConst">const&nbsp;</span>
-                    <span className="text-username">message&nbsp;</span>
-                    <span className="text-backgroundConst">=&nbsp;</span>
-                    <span className="text-username">&nbsp;{'{'}&nbsp;</span> <br/>
-                    <div className="pl-3 flex flex-col">
-                            <span className="text-username">name:&nbsp;<span
-                                className="text-borderHover">"{nameValue}"</span></span>
-                        <span className="text-username">email:&nbsp;<span
-                            className="text-borderHover">"{emailValue}"</span></span>
-                        <span className="text-username">message:&nbsp;<span
-                            className="text-borderHover">"{messageValue}"</span></span>
-                        <span className="text-username">date:&nbsp;<span
-                            className="text-borderHover">"{}"</span></span>
-                    </div>
-                    <span className="text-username">&nbsp;{'}'}&nbsp;</span> <br/>
-                </div>
-                <div>
-                    <span className="text-backgroundConst">const&nbsp;</span>
-                    <span className="text-username">button&nbsp;</span>
-                    <span className="text-backgroundConst">=&nbsp;</span>
-                    <span className="text-username">&nbsp;button.addEventListener(<span
-                        className="text-borderHover">'click'</span>,&nbsp;()&nbsp;{'=>'}&nbsp;{'{'}&nbsp;<br/>
-                                    <span className="pl-4">form.send(message);</span> <br/>
-                        {'}'})
-                            </span>
-                </div>
+            <div
+                className="border border-borderLightGray rounded-lg bg-backgroundTerminal min-h-[56px] px-3 py-3 flex coding fix-font">
+                <CodeBlock
+                    className="whitespace-pre text-sm"
+                    text={code_message}
+                    language={'javascript'}
+                    paragraph={'// Code message'}
+                    showLineNumbers={true}
+                    theme={dracula}
+                />
+
             </div>
         </div>
     )
 
     const centralSection = (
         <>
-            <div className="basis-6/12">
+            <div className="w-1/2">
                 <div className="flex flex-col h-full">
                     <div className="hidden md:flex border-b border-borderLightGray w-full">
                         <div
