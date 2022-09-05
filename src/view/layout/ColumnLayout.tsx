@@ -29,7 +29,7 @@ const ColumnLayout: FC<ColumnProps> = ({folderSection, centralSection, id_centra
             <div className="flex flex-col h-full lg:flex-row">
 
                 {/* Sidebar section */}
-                <section className="flex h-auto basis-auto xl:h-full xl:min-w-[33.3%]"
+                <section className="flex h-auto basis-auto xl:h-full xl:basis-3/12"
                          id="sidebar-section">
 
                     {/* Icon section */}

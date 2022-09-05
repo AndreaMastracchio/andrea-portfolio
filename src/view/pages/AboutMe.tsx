@@ -21,7 +21,7 @@ const AboutMe: FC<Props> = () => {
     const {about_me_text, interests, education} = text()
 
     const folderSection = (
-        <div className="md:basis-10/12 grow">
+        <div className="md:w-3/12 grow">
             <div className="min-h-[25px] bg-backgroundAccordionMobile flex items-center
                                    gap-2 border-b border-borderLightGray pl-2 pr-3 py-2
                                    cursor-pointer lg:bg-none"
