@@ -18,53 +18,6 @@ const ContactMe = () => {
         </div>
     )
 
-    const message_container = (
-        <div className="basis-6/12 lg:border-l border-borderLightGray pb-4">
-            <div
-                className="min-h-[37px] hidden items-center gap-2 border-b border-borderLightGray pl-2 pr-3 py-2 md:flex">
-            </div>
-            <div className="py-2 px-3">
-                <p className="text-textLightGray text-sm"> // Code message: </p>
-            </div>
-            <div className="flex flex-col mx-3 gap-5">
-                <div>
-                    <span className="text-backgroundConst">const&nbsp;</span>
-                    <span className="text-username">button&nbsp;</span>
-                    <span className="text-backgroundConst">=&nbsp;</span>
-                    <span className="text-username">&nbsp;document.querySelector(<span
-                        className="text-borderHover">'#contact-form'</span>)</span>
-                </div>
-                <div>
-                    <span className="text-backgroundConst">const&nbsp;</span>
-                    <span className="text-username">message&nbsp;</span>
-                    <span className="text-backgroundConst">=&nbsp;</span>
-                    <span className="text-username">&nbsp;{'{'}&nbsp;</span> <br/>
-                    <div className="pl-3 flex flex-col">
-                            <span className="text-username">name:&nbsp;<span
-                                className="text-borderHover">"{nameValue}"</span></span>
-                        <span className="text-username">email:&nbsp;<span
-                            className="text-borderHover">"{emailValue}"</span></span>
-                        <span className="text-username">message:&nbsp;<span
-                            className="text-borderHover">"{messageValue}"</span></span>
-                        <span className="text-username">date:&nbsp;<span
-                            className="text-borderHover">""</span></span>
-                    </div>
-                    <span className="text-username">&nbsp;{'}'}&nbsp;</span> <br/>
-                </div>
-                <div>
-                    <span className="text-backgroundConst">const&nbsp;</span>
-                    <span className="text-username">button&nbsp;</span>
-                    <span className="text-backgroundConst">=&nbsp;</span>
-                    <span className="text-username">&nbsp;button.addEventListener(<span
-                        className="text-borderHover">'click'</span>,&nbsp;()&nbsp;{'=>'}&nbsp;{'{'}&nbsp;<br/>
-                                    <span className="pl-4">form.send(message);</span> <br/>
-                        {'}'})
-                            </span>
-                </div>
-            </div>
-        </div>
-    )
-
     const form_container = (
         <div className="flex flex-col gap-4 px-1 py-2 coding basis-full">
             <div className="text-start pt-4 px-3 text-textLightGray md:hidden">
@@ -97,6 +50,53 @@ const ContactMe = () => {
                     submit-message
                 </button>
             </form>
+        </div>
+    )
+
+    const message_container = (
+        <div className="basis-6/12 lg:border-l border-borderLightGray pb-4">
+            <div
+                className="min-h-[37px] hidden items-center gap-2 border-b border-borderLightGray pl-2 pr-3 py-2 md:flex">
+            </div>
+            <div className="py-2 px-3">
+                <p className="text-textLightGray text-sm"> // Code message: </p>
+            </div>
+            <div className="flex flex-col mx-3 gap-5">
+                <div>
+                    <span className="text-backgroundConst">const&nbsp;</span>
+                    <span className="text-username">button&nbsp;</span>
+                    <span className="text-backgroundConst">=&nbsp;</span>
+                    <span className="text-username">&nbsp;document.querySelector(<span
+                        className="text-borderHover">'#contact-form'</span>)</span>
+                </div>
+                <div>
+                    <span className="text-backgroundConst">const&nbsp;</span>
+                    <span className="text-username">message&nbsp;</span>
+                    <span className="text-backgroundConst">=&nbsp;</span>
+                    <span className="text-username">&nbsp;{'{'}&nbsp;</span> <br/>
+                    <div className="pl-3 flex flex-col">
+                            <span className="text-username">name:&nbsp;<span
+                                className="text-borderHover">"{nameValue}"</span></span>
+                        <span className="text-username">email:&nbsp;<span
+                            className="text-borderHover">"{emailValue}"</span></span>
+                        <span className="text-username">message:&nbsp;<span
+                            className="text-borderHover">"{messageValue}"</span></span>
+                        <span className="text-username">date:&nbsp;<span
+                            className="text-borderHover">"{}"</span></span>
+                    </div>
+                    <span className="text-username">&nbsp;{'}'}&nbsp;</span> <br/>
+                </div>
+                <div>
+                    <span className="text-backgroundConst">const&nbsp;</span>
+                    <span className="text-username">button&nbsp;</span>
+                    <span className="text-backgroundConst">=&nbsp;</span>
+                    <span className="text-username">&nbsp;button.addEventListener(<span
+                        className="text-borderHover">'click'</span>,&nbsp;()&nbsp;{'=>'}&nbsp;{'{'}&nbsp;<br/>
+                                    <span className="pl-4">form.send(message);</span> <br/>
+                        {'}'})
+                            </span>
+                </div>
+            </div>
         </div>
     )
 
